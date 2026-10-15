@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.example.TaskMapper">
+    <insert id="insert" parameterType="org.example.Task">
+        INSERT INTO task (id, conf) VALUES (#{id}, #{conf})
+    </insert>
+    <select id="search" resultType="org.example.Task">
+        select id, conf from task
+        <where>
+            <if test="request.id != null">
+                id=#{request.id}
+            </if>
+            <if test="request.sourceRegionInfo != null">
+                AND json_extract(conf, '$.configuration.sourceRegionInfos[*].geo') like concat('%"', #{request.sourceRegionInfos[0].geo}, '"%')
+            </if>
+        </where>
+    </select>
+</mapper>

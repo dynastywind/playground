@@ -1,0 +1,5 @@
+m = 10 dm
+dm = 10 cm
+cm = 10 mm
+hr = 60 min
+min = 60 sec

@@ -1,0 +1,22 @@
+# http://editorconfig.org
+root = true
+
+[*]
+# 文件编码格式
+charset = utf-8
+# 结尾换行符
+end_of_line = lf
+# 在文件末尾插入一个空行
+insert_final_newline = true
+# 自动删除行尾随空格
+trim_trailing_whitespace = true
+
+[*.java]
+# 缩进风格使用空格代替 Tab
+indent_style = space
+# 缩进大小为 4 个空格
+indent_size = 4
+# 连续缩进/多行对齐缩进大小为 4 个空格
+continuation_indent_size = 4
+# 每行最大长度限制为 120 字符
+max_line_length = 120
